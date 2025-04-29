@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibrar com o Clique</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .vibration-button {
+      width: 100px;
+      height: 100px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .vibration-button:active {
+      transform: scale(0.95);
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <button class="vibration-button" onclick="vibrate()">Vibrar</button>
+
+  <script>
+    function vibrate() {
+      // Verifica se a API de vibração está disponível
+      if ("vibrate" in navigator) {
+        // Faz o dispositivo vibrar por 200ms
+        navigator.vibrate(200);
+      } else {
+        alert("A vibração não é suportada neste dispositivo.");
+      }
+    }
+  </script>
+</body>
+</html>
+<!-- Only test-->
